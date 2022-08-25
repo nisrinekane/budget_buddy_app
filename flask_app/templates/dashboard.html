@@ -42,7 +42,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Savings</h5>
                     <p class="card-text">Your savings so far:</p>
-                    <h2 class="text-warning">${{savings[0]['savings']}}</h2>
+                    <h2 class="text-success">${{savings[0]['savings']}}</h2>
                     <a href="/savings" class="btn btn-sucess">Update Savings</a>
                 </div>
             </div>
@@ -50,10 +50,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Expenses</h5>
                     <p class="card-text">Your weekly expenses so far:</p>
-                    <h2 class="text-warning">{% if expense[0]['SUM(amount)'] %}
+                    <h2 class="text-success">{% if expense[0]['SUM(amount)'] %}
                         ${{expense[0]['SUM(amount)']}}
                         {% else %}
-                        <h2 class="text-warning">$0</h2>
+                        <h2 class="text-success">$0</h2>
                         {% endif %}</h2>
                     <a href="/expenses" class="btn btn-sucess">Update Expenses</a>
                 </div>
@@ -63,7 +63,7 @@
                     <h5 class="card-title">Spending Limit</h5>
                     <p class="card-text">Your monthly spending limit so far:</p>
                     {% if expense[0]['SUM(amount)'] %}
-                    <h3 class="text-success">${{monthly_income[0]['income']-expense[0]['SUM(amount)']}}</h3>
+                    <h3 class="text-warning">${{monthly_income[0]['income']-expense[0]['SUM(amount)']}}</h3>
                     {% else %}
                     <h3 class="text-success">${{monthly_income[0]['income']}}</h3>
                     {% endif %}
