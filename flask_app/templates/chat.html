@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.min.js" integrity="sha512-mHO4BJ0ELk7Pb1AzhTi3zvUeRgq3RXVOu9tTRfnA6qOxGK4pG2u57DJYolI4KrEnnLTcH9/J5wNOozRTDaybXg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+
+    <title> Budget Buddy</title>
+</head>
+<body>
+    <nav class="navbar navbar-light text-light">
+        <h2><span class="navbar-brand mb-0 h1">
+                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/flying-money-4385660-3640566.png" alt="logo"
+                    id="logo">
+            </span><a href="/dashboard" id="title">Budget Buddy</a></h2>
+        </div>
+        <div class="flexed"> 
+            <!-- drop down -->
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="/dashboard">Home</a>
+                    <a href="/edit/user">Edit Account</a>
+                    <a href="/reports">Your Reports</a>
+                </div>
+            </div>
+            <!-- rest of  navbar links-->
+            <div>
+                <a href="/edit/user" class="btn btn-light">account</a>
+                <a href="/logout" class="btn btn-danger" id="logout">logout</a>
+            </div>
+        </div>
+    </nav>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var socket = io.connect();
+            socket.on('connect', function() {
+                console.log($('#userId').innerHTML)
+                let dict = {'content':' entered the chat',
+                            'user_id' : document.getElementById('userId').innerText};
+
+                socket.send(dict);
+            });
+            socket.on('message', function(msg) {
+                if (msg.user_id == 'Customer Agent') {
+                    $("#messages").append('<li style="color:green">' + msg.user_id + ':'+ msg.content + '</li>');
+                    console.log('Received message');
+                } else {
+                    $("#messages").append('<li style="color:blue">' + msg.user_id + ':'+ msg.content + '</li>');
+                    console.log('Received message');
+                }
+            });
+        
+            $('#sendbutton').on('click', function() {
+                let dict = {'content':$('#myMessage').val(),
+                            'user_id' : document.getElementById('userId').innerText};
+
+                socket.send(dict);
+                $('#myMessage').val('');
+            });
+        });
+        </script>
+
+        <div class="chat-div col-lg-6">
+            <div class="card">
+                <span class="d-none" id="userId">{{user_id}}</span>
+                <ul id="messages"></ul>
+                <input type="text" id="myMessage" placeholder="type your message here....">
+                <button id="sendbutton" class="btn btn-block">Send</button>
+            </div>
+        </div>
+</body>
+</html>

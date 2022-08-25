@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f4f3fb;
+}
+
+.flexed {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.5rem
+}
+
+
+#logo {
+    width: 70px;
+}
+
+nav {
+    padding: 0 1rem;
+    background-color: #e4e4ff;
+    margin-bottom: 100px;
+    position: fixed;
+    height: 100px;
+}
+
+form {
+    padding: 2rem;
+}
+
+label,
+input {
+    margin-top: 0.5rem;
+}
+
+.btn {
+    background-color: #504bf2;
+    ;
+    font-weight: bold;
+    color: white;
+    margin-top: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+th {
+    color: #504bf2;
+}
+
+.dropdown-toggle {
+    height: 40px;
+}
+
+.card {
+    border-radius: 11px;
+    width: 500px;
+    margin: 20px;
+    height: max-content;
+    text-align: center;
+}
+
+.card-title {
+    color: #a6a4bc;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.dropdown-menu {
+    background-color: black !important;
+}
+
+.savings {
+    background-color: white;
+    border-radius: 11px;
+    padding: 1rem;
+    height: 200px;
+    margin: 10vh 50vh;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+#title {
+    color: #504bf2;
+    font-weight: bolder;
+}
+
+.card-title {
+    padding-bottom: 1rem;
+    border-bottom: solid 2px #ddd;
+}
+
+.card-text {
+    height: 80px;
+}
+
+
+/* drop down styling */
+/* Dropdown Button */
+.dropbtn {
+    background-color: #504bf2;
+    ;
+    color: white;
+    padding: 7px;
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    color: black;
+    background-color: white;
+}
+
+
+.spending-summary {
+    border-top: 4px solid #504bf2;
+    margin-top: 5rem;
+}
+
+.spending-title {
+    margin-top: 2rem;
+    text-align: center;
+    color: #504bf2;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+table {
+    margin: 10vh 2vh;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: black;
+}
+
+.utilities {
+    color: aqua;
+}
+
+.footer {
+    margin-top: 100px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #b0adfe;
+    color: #504bf2;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.report-div {
+    margin: 5vh 60vh;
+}
+
+
+.account-delete {
+    margin-bottom: 50px;
+}
+
+.delete-acc {
+    color:#504bf2;
+}
+
+#logout, #delete {
+    background-color: #FA3E3E;
+}
+
+#delete {
+    margin-left: 2px;
+}
+.funds {
+    border-top: 3px #504bf2 solid;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.new-fund {
+    margin: 0 80vh;
+}
+
+.chat-div {
+    margin: 10vh 60vh;
+}
+
