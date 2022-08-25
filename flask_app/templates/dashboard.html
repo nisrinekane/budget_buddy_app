@@ -61,7 +61,7 @@
             <div class="card col-sm" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Spending Limit</h5>
-                    <p class="card-text">Your weekly spending limit so far:</p>
+                    <p class="card-text">Your monthly spending limit so far:</p>
                     {% if expense[0]['SUM(amount)'] %}
                     <h3 class="text-success">${{monthly_income[0]['income']-expense[0]['SUM(amount)']}}</h3>
                     {% else %}
